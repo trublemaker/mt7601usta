@@ -29,7 +29,7 @@ First get Synology [toolchain](http://sourceforge.net/projects/dsgpl/files/DSM%2
 
 ```sh
 $ git clone https://github.com/art567/mt7601usta.git
-$ cd mt7601/src
+$ cd mt7601usta/src
 $ export LINUX_SRC=/home/syno/source/linux-3.x
 $ export CROSS_COMPILE=/home/syno/toolchains/5.1/x86_64-pc-linux-gnu/bin/x86_64-pc-linux-gnu-
 $ make
@@ -60,7 +60,7 @@ First install kernel-devel for your Linux distro
 
 ```sh
 $ git clone https://github.com/art567/mt7601usta.git
-$ cd mt7601/src
+$ cd mt7601usta/src
 $ make
 $ mkdir -p /etc/Wireless/RT2870STA/
 $ cp RT2870STA.dat /etc/Wireless/RT2870STA/
