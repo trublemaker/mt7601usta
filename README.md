@@ -56,15 +56,21 @@ For kernels 3.19 and later a new mac80211 driver was written from scratch by the
 
 ### Usage
 
-First install kernel-devel for your Linux distro
+First install kernel-devel for your Linux distro:
+
+- RHEL/CentOS: ```# yum install kernel-devel``` 
+
+- Debian/Ubuntu ```# apt-get install linux-headers-generic build-essential```
+
+Clone repository and type following to build driver:
 
 ```sh
 $ git clone https://github.com/art567/mt7601usta.git
 $ cd mt7601usta/src
 $ make
-$ mkdir -p /etc/Wireless/RT2870STA/
-$ cp RT2870STA.dat /etc/Wireless/RT2870STA/
-$ insmod os/linux/mt7601Usta.ko
+# mkdir -p /etc/Wireless/RT2870STA/
+# cp RT2870STA.dat /etc/Wireless/RT2870STA/
+# insmod os/linux/mt7601Usta.ko
 ```
 
 If the module has loaded OK, you should see `mt7601Usta` listed in the output of `lsmod` and a new network interface `ra0` should be present in the output of `ip link`.
