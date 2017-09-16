@@ -58,9 +58,11 @@ For kernels 3.19 and later a new mac80211 driver was written from scratch by the
 
 First install kernel-devel for your Linux distro:
 
-- RHEL/CentOS: ```# yum install kernel-devel``` 
+- RHEL/CentOS: ```# yum install kernel-devel gcc``` 
 
-- Debian/Ubuntu ```# apt-get install linux-headers-generic build-essential```
+- Fedora 24/25/26: ```# dnf install kernel-devel gcc``` 
+
+- Debian/Ubuntu: ```# apt-get install linux-headers-generic build-essential```
 
 Clone repository and type following to build driver:
 
