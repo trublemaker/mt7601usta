@@ -86,6 +86,11 @@
 #define KTHREAD_SUPPORT 1
 #endif /* LINUX_VERSION_CODE */
 
+/* linux kernel 4.11+ compability */
+#if LINUX_VERSION_CODE >= KERNEL_VERSION(4,11,0)
+#include <linux/sched/signal.h>
+#endif
+
 #ifdef KTHREAD_SUPPORT
 #include <linux/err.h>
 #include <linux/kthread.h>
