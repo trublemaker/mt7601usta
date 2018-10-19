@@ -58,9 +58,9 @@ For kernels 3.19 and later a new mac80211 driver was written from scratch by the
 
 First install kernel-devel for your Linux distro:
 
-- RHEL/CentOS: ```# yum install kernel-devel gcc``` 
+- RHEL/CentOS: ```# yum install kernel-devel gcc```
 
-- Fedora 24/25/26: ```# dnf install kernel-devel gcc``` 
+- Fedora 24/25/26: ```# dnf install kernel-devel gcc```
 
 - Debian/Ubuntu: ```# apt-get install linux-headers-generic build-essential```
 
@@ -99,7 +99,7 @@ There is a PPA repo available containing a DKMS-capable package based on this re
 
 https://code.launchpad.net/~thopiekar/+archive/ubuntu/mt7601
 
-Thanks to @thopiekar 
+Thanks to @thopiekar
 
 
 ### History
@@ -122,7 +122,7 @@ Generally better than before.
 A second patch was released on 31 Aug, 2014 with the following comment:
 
 ```
-A new patch[1] mainly based on patches at 
+A new patch[1] mainly based on patches at
 https://github.com/ashaffer/rt3573sta
 and several network throughput tests via the Iperf.
 ```
