@@ -31,7 +31,8 @@ include $(RT28xx_DIR)/os/linux/config.mk
 RTMP_SRC_DIR = $(RT28xx_DIR)/RT$(MODULE)
 
 #PLATFORM: Target platform
-PLATFORM = PC
+PLATFORM = SMDK
+#PLATFORM = PC
 #PLATFORM = SYNOLOGY
 #PLATFORM = RASPBERRYPI
 #PLATFORM = 5VT
@@ -52,7 +53,6 @@ PLATFORM = PC
 #PLATFORM = CMPC
 #PLATFORM = RALINK_2880
 #PLATFORM = RALINK_3052
-#PLATFORM = SMDK
 #PLATFORM = RMI
 #PLATFORM = RMI_64
 #PLATFORM = KODAK_DC
@@ -297,8 +297,8 @@ CROSS_COMPILE =
 endif
 
 ifeq ($(PLATFORM),SMDK)
-LINUX_SRC = /home/bhushan/itcenter/may28/linux-2.6-samsung
-CROSS_COMPILE = /usr/local/arm/4.2.2-eabi/usr/bin/arm-linux-
+LINUX_SRC = /rpi/linux-rpi-git-build/
+CROSS_COMPILE = /rpi/tools/arm-bcm2708/arm-bcm2708hardfp-linux-gnueabi/bin/arm-bcm2708hardfp-linux-gnueabi-
 endif
 
 ifeq ($(PLATFORM),RALINK_3352)
@@ -527,6 +527,17 @@ else
 	$(MAKE) -C $(RT28xx_DIR)/os/linux -f Makefile.6 install
 endif
 endif
+
+modules_install:
+	@echo modules_install: $(INSTALL_MOD_PATH)
+	#$(shell [ ! -f /etc/Wireless ] && mkdir /etc/Wireless)
+	@echo mkdir $(INSTALL_MOD_PATH)
+	@echo cp $(RT28xx_DIR)/$(DAT_FILE_NAME) $(DAT_PATH)/.
+	@echo install -d $(LINUX_SRC_MODULE)
+	@echo install -m 644 -c $(addsuffix .ko,$(MOD_NAME)) $(INSTALL_MOD_PATH)
+	@echo /sbin/depmod -a ${shell uname -r}
+
+	#INSTALL_MOD_PATH
 
 libwapi:
 ifneq (,$(findstring 2.4,$(LINUX_SRC)))
