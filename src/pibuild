@@ -1,0 +1,6 @@
+
+make ARCH=arm CROSS_COMPILE=arm-bcm2708hardfp-linux-gnueabi-
+
+#make modules_install ARCH=arm CROSS_COMPILE=arm-bcm2708hardfp-linux-gnueabi- INSTALL_MOD_PATH=/rpi/linux-rpi-git-build/rpi_modules
+
+
